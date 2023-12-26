@@ -13,9 +13,9 @@
 
 # 后端开发方案
 ## 技术栈
-- 编程语言: Python (Flask/Django), Node.js (Express), Java (Spring Boot), 或其他适合REST API开发的语言。
-- 数据库: MySQL, PostgreSQL, MongoDB, 或其他适合存储产品和购物车数据的数据库系统。
-- API 文档和测试: Swagger 或 Postman。
+- 编程语言: Go,适合REST API开发的语言。
+- 数据库: JSON, 或其他适合存储产品和购物车数据的数据库系统。
+- API 文档和测试: Swagger。
 
 ## 功能实现
 1. 获取啤酒列表:
@@ -35,9 +35,9 @@
 
 # 前端开发方案
 ## 技术栈
-- 框架: React, Vue.js, 或 Angular。
-- 状态管理: Redux, Vuex, 或 NgRx（取决于选择的框架）。
-- 样式: CSS, Sass, 或使用Bootstrap/Ant Design等UI框架。
+- 框架: Vue.js。
+- 状态管理: Vuex,。
+- 样式: CSS UI框架。
 
 ## 功能实现
 1. 用户界面:
