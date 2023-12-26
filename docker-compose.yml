@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cart:
+    build: 
+      context: ./cart
+      dockerfile: Dockerfile
+    ports:
+      - "11111:11111"
+  front:
+    build: 
+      context: ./front
+      dockerfile: Dockerfile

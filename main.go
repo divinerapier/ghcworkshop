@@ -43,7 +43,7 @@ type Cart struct {
 
 func main() {
 	r := NewEngine()
-	r.Run("0.0.0.0:8080") // listen and serve on 0.0.0.0:8080
+	r.Run("0.0.0.0:11111") // listen and serve on 0.0.0.0:8080
 }
 
 func NewEngine() *gin.Engine {
@@ -116,6 +116,8 @@ func NewEngine() *gin.Engine {
 			ctx.JSON(200, cart)
 		})
 
+		// curl -X DELETE http://localhost:8080/cart/1
+		// Delete cart by id
 		r.DELETE("/cart/:id", func(ctx *gin.Context) {
 			id, err := strconv.ParseInt(ctx.Param("id"), 10, 64)
 			if err != nil {
@@ -129,11 +131,13 @@ func NewEngine() *gin.Engine {
 
 	beerGroup := r.Group("/beer")
 	{
+		// curl -X GET http://localhost:8080/beer
 		beerGroup.GET("/", func(ctx *gin.Context) {
 			remains := beers.GetRemains()
 			ctx.JSON(200, remains)
 		})
 
+		// curl -X GET http://localhost:8080/beer/search?q=ipa
 		beerGroup.GET("/search", func(ctx *gin.Context) {
 			type Search struct {
 				Q string `form:"q" binding:"required"`
